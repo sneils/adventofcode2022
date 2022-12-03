@@ -1,0 +1,42 @@
+# http://editorconfig.org
+
+# this file is the top-most editorconfig file
+root = true
+
+# all files
+# (includes python defaults https://peps.python.org/pep-0008/#indentation)
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{go.mod,go.sum,*.go}]
+indent_style = tab
+
+# https://www.terraform.io/docs/language/syntax/style.html
+[*.{tf,hcl}]
+indent_size = 2
+
+# https://developers.home-assistant.io/docs/documenting/yaml-style-guide/
+[*.{yaml,yml}]
+indent_size = 2
+
+# https://google.github.io/styleguide/jsoncstyleguide.xml
+[*.{json,js}]
+indent_size = 2
+
+# https://google.github.io/styleguide/shellguide.html
+[*.sh]
+indent_size = 2
+# below here are settings for shfmt
+shell_variant = bash
+binary_next_line = true  # like -bn
+switch_case_indent = true  # like -ci
+#space_redirects = true  # like -sr
+#keep_padding = true  # like -kp
