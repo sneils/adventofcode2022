@@ -2,6 +2,11 @@ from itertools import product, islice
 from string import ascii_letters
 
 
+def chunk(it, size):
+    it = iter(it)
+    return iter(lambda: tuple(islice(it, size)), ())
+
+
 def run(data):
     rucksacks = []
     for line in [line.rstrip() for line in data]:
@@ -13,11 +18,6 @@ def run(data):
         in_both += set(x for (x, y) in product(set(a), set(b)) if x == y)
 
     part1 = sum([ascii_letters.index(c)+1 for c in in_both])
-
-    def chunk(it, size):
-        it = iter(it)
-        return iter(lambda: tuple(islice(it, size)), ())
-
     part2 = 0
 
     for group in chunk(rucksacks, 3):
