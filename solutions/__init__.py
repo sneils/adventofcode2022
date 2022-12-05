@@ -2,11 +2,21 @@ from importlib import import_module
 from pathlib import Path
 
 
-def run(day, input_path):
-    data_path = "{}/{}/{}.txt".format(
-        Path(__file__).parent.parent.resolve(), input_path, day)
+def get_input(path):
+    input_path = "{}/{}".format(
+        Path(__file__).parent.parent.resolve(), path)
 
-    with open(data_path) as f:
-        data = f.readlines()
+    with open(input_path) as f:
+        return f.readlines()
 
+
+def run_puzzle(day):
+    return run(day, get_input(f"puzzles/{day}.txt"))
+
+
+def run_sample(day, suffix=""):
+    return run(day, get_input(f"samples/{day}{suffix}.txt"))
+
+
+def run(day, data):
     return import_module(f"solutions.{day}").run(data)
