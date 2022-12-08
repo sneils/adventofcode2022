@@ -9,7 +9,7 @@ def chunk(it, size):
 
 def run(data):
     rucksacks = []
-    for line in [line.rstrip() for line in data]:
+    for line in data:
         l = len(line)//2
         rucksacks.append((line[:l], line[l:]))
 

@@ -4,11 +4,13 @@ from re import compile as re_compile
 class StackMover:
     MOVE_REGEX = re_compile(r'^move ([0-9]+) from ([0-9]+) to ([0-9]+)')
 
-    def __init__(self, version, n):
+    def __init__(self, version):
         self.version = version
-        self.stacks = ["" for _ in range(n)]
+        self.stacks = []
 
     def add(self, stack, crate):
+        while len(self.stacks) <= stack:
+            self.stacks.append("")
         self.stacks[stack] += crate
 
     def move(self, move):
@@ -29,8 +31,7 @@ class StackMover:
 
 
 def run(data):
-    n = len(data[0])//4+1
-    stacks = (StackMover(9000, n), StackMover(9001, n))
+    stacks = (StackMover(9000), StackMover(9001))
 
     for line in reversed(data):
         if line.find("[") < 0:

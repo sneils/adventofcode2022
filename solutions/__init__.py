@@ -10,10 +10,10 @@ def get_input(path):  # -> list[str]:
         Path(__file__).parent.parent.resolve(), path)
 
     with open(input_path) as f:
-        return f.readlines()
+        return [line.rstrip() for line in f.readlines()]
         # TODO: should we stream instead? might need to change some solutions in this case
         # for line in f:
-        #    yield line
+        #    yield line.rstrip()
 
 
 def run_puzzle(day):  # -> Tuple[int | str, int | str]:

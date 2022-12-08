@@ -6,7 +6,7 @@ def run(data):
     wd = []
 
     for line in data:
-        line = line.rstrip().split(" ")
+        line = line.split(" ")
 
         if line[0] == "$":
             match line[1]:

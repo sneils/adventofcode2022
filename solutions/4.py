@@ -7,7 +7,7 @@ def run(data):
     part1, part2 = 0, 0
 
     for line in data:
-        elf1, elf2 = (parse_elf(elf) for elf in line.rstrip().split(","))
+        elf1, elf2 = (parse_elf(elf) for elf in line.split(","))
 
         if any(x in elf1 for x in elf2):
             part2 += 1

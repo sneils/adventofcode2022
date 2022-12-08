@@ -2,11 +2,11 @@ def run(data):
     elves = []
     cur = 0
     for line in data:
-        if line == '\n':
+        if line == "":
             elves.append(cur)
             cur = 0
         else:
-            cur += int(line.rstrip())
+            cur += int(line)
 
     elves.append(cur)
     elves.sort()
