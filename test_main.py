@@ -11,6 +11,7 @@ SAMPLES = [
     (8, 21, 8),
     (9, 88, 36),
     # day 10 is special
+    (11, 10605, None),
 ]
 
 
