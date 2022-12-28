@@ -28,8 +28,9 @@ def compare(a, b):
 def run(data):
     data = [json_loads(row) for row in data if row != ""]
 
-    p1 = sum(i//2+1 for i in range(0, len(data), 2)
-             if compare(data[i], data[i+1]))
+    p1 = sum(
+        i // 2 + 1 for i in range(0, len(data), 2) if compare(data[i], data[i + 1])
+    )
 
     def _cmp(a, b):
         if compare(a, b):
@@ -41,9 +42,9 @@ def run(data):
     data.sort(key=cmp_to_key(_cmp))
     for i in range(len(data)):
         if data[i] == _2:
-            p2 = i+1
+            p2 = i + 1
         elif data[i] == _6:
-            p2 *= i+1
+            p2 *= i + 1
             break
 
     return p1, p2

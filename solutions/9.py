@@ -5,11 +5,11 @@ class Knot:
         self.visits = set()
         self.visit()
 
-#    def get(self):
-#        return self.x, self.y
-#
-#    def visited(self, x, y):
-#        return "{},{}".format(x, y) in self.visits
+    #    def get(self):
+    #        return self.x, self.y
+    #
+    #    def visited(self, x, y):
+    #        return "{},{}".format(x, y) in self.visits
 
     def visit(self):
         self.visits.add("{},{}".format(self.x, self.y))
@@ -34,7 +34,7 @@ class Knot:
         if self.next == None:
             return
 
-        dx, dy = self.x-self.next.x, self.y-self.next.y
+        dx, dy = self.x - self.next.x, self.y - self.next.y
         if abs(dx) > 1 or abs(dy) > 1:
             self.next.x += max(-1, min(1, dx))
             self.next.y += max(-1, min(1, dy))

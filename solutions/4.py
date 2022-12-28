@@ -1,6 +1,6 @@
 def parse_elf(s):
     a, b = s.split("-")
-    return [*range(int(a), int(b)+1)]
+    return [*range(int(a), int(b) + 1)]
 
 
 def run(data):

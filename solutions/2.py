@@ -3,44 +3,44 @@ def run(data):
     for line in data:
         a, b = line.split()
         match b:
-            case 'X':
+            case "X":
                 match a:
-                    case 'A':
-                        part1 += 3+1
-                        part2 += 0+3
-                    case 'B':
-                        part1 += 0+1
-                        part2 += 0+1
-                    case 'C':
-                        part1 += 6+1
-                        part2 += 0+2
+                    case "A":
+                        part1 += 3 + 1
+                        part2 += 0 + 3
+                    case "B":
+                        part1 += 0 + 1
+                        part2 += 0 + 1
+                    case "C":
+                        part1 += 6 + 1
+                        part2 += 0 + 2
                     case _:
                         raise ValueError
-            case 'Y':
+            case "Y":
                 match a:
-                    case 'A':
-                        part1 += 6+2
-                        part2 += 3+1
-                    case 'B':
-                        part1 += 3+2
-                        part2 += 3+2
-                    case 'C':
-                        part1 += 0+2
-                        part2 += 3+3
+                    case "A":
+                        part1 += 6 + 2
+                        part2 += 3 + 1
+                    case "B":
+                        part1 += 3 + 2
+                        part2 += 3 + 2
+                    case "C":
+                        part1 += 0 + 2
+                        part2 += 3 + 3
                     case _:
                         raise ValueError
                 pass
-            case 'Z':
+            case "Z":
                 match a:
-                    case 'A':
-                        part1 += 0+3
-                        part2 += 6+2
-                    case 'B':
-                        part1 += 6+3
-                        part2 += 6+3
-                    case 'C':
-                        part1 += 3+3
-                        part2 += 6+1
+                    case "A":
+                        part1 += 0 + 3
+                        part2 += 6 + 2
+                    case "B":
+                        part1 += 6 + 3
+                        part2 += 6 + 3
+                    case "C":
+                        part1 += 3 + 3
+                        part2 += 6 + 1
                     case _:
                         raise ValueError
                 pass

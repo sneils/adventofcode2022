@@ -24,7 +24,7 @@ class CPU:
 
     def draw(self):
         m = self.cycle % 40 - 1
-        if self.x in [m-1, m, m+1]:
+        if self.x in [m - 1, m, m + 1]:
             print("#", end="")
         else:
             print(".", end="")

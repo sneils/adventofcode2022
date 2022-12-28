@@ -4,7 +4,7 @@ from math import prod
 class Troop:
     def __init__(self):
         self.monkeys = []
-        self.reduce_worry = lambda x: x//3
+        self.reduce_worry = lambda x: x // 3
 
     def add(self, monkey):
         self.monkeys.append(monkey)
@@ -22,7 +22,9 @@ class Troop:
 
 
 class Monkey:
-    def __init__(self, items, operation, operation_with, test_divisor, test_true, test_false):
+    def __init__(
+        self, items, operation, operation_with, test_divisor, test_true, test_false
+    ):
         self.items = items
         self.operation = operation
         self.operation_with = operation_with
@@ -72,7 +74,8 @@ def parse_troop(data):
             data[2].split()[-1],
             int(data[3].split()[-1]),
             int(data[4].split()[-1]),
-            int(data[5].split()[-1]))
+            int(data[5].split()[-1]),
+        )
 
     troop = Troop()
     tmp = []

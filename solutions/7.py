@@ -29,8 +29,9 @@ def run(data):
 
     sizes = {}
     for dir in fs.keys():
-        sizes[dir] = fs[dir] + sum(s for d, s in fs.items()
-                                   if d != dir and d.startswith(dir.rstrip("/") + "/"))
+        sizes[dir] = fs[dir] + sum(
+            s for d, s in fs.items() if d != dir and d.startswith(dir.rstrip("/") + "/")
+        )
 
     p1 = sum(s for s in sizes.values() if s <= 100_000)
 

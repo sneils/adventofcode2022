@@ -4,16 +4,11 @@ from typing import Tuple
 
 
 def get_input(path):  # -> list[str]:
-    # return Path("{}/../{}".format(__path__[0], path)).read_text().splitlines()
-
-    input_path = "{}/{}".format(
-        Path(__file__).parent.parent.resolve(), path)
-
-    with open(input_path) as f:
-        return [line.rstrip() for line in f.readlines()]
-        # TODO: should we stream instead? might need to change some solutions in this case
-        # for line in f:
-        #    yield line.rstrip()
+    return Path("{}/../{}".format(__path__[0], path)).read_text().splitlines()
+    # TODO: should we stream instead? might need to change some solutions in this case
+    # with open(input_path) as f:
+    #   for line in f:
+    #       yield line.rstrip()
 
 
 def run_puzzle(day):  # -> Tuple[int | str, int | str]:

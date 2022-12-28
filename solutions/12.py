@@ -5,15 +5,15 @@ def get_neighbors(data, pos):
     n, (x, y) = [], pos
 
     if y > 0:
-        n.append((x, y-1))
-    if y < len(data)-1:
-        n.append((x, y+1))
+        n.append((x, y - 1))
+    if y < len(data) - 1:
+        n.append((x, y + 1))
     if x > 0:
-        n.append((x-1, y))
-    if x < len(data[y])-1:
-        n.append((x+1, y))
+        n.append((x - 1, y))
+    if x < len(data[y]) - 1:
+        n.append((x + 1, y))
 
-    return [(nx, ny) for (nx, ny) in n if ord(data[ny][nx]) <= ord(data[y][x])+1]
+    return [(nx, ny) for (nx, ny) in n if ord(data[ny][nx]) <= ord(data[y][x]) + 1]
 
 
 def find_route(data, pos, goal):
@@ -30,7 +30,7 @@ def find_route(data, pos, goal):
             continue
 
         seen.add(check)
-        moves += [(n, steps+1) for n in get_neighbors(data, check)]
+        moves += [(n, steps + 1) for n in get_neighbors(data, check)]
 
 
 def run(data):
@@ -48,7 +48,8 @@ def run(data):
                 data[y] = data[y].replace("E", "z")
 
     p1 = find_route(data, pos, goal)
-    p2 = min(filter(lambda n: n != None, (find_route(data, pos, goal)
-             for pos in todo_p2)))
+    p2 = min(
+        filter(lambda n: n != None, (find_route(data, pos, goal) for pos in todo_p2))
+    )
 
     return p1, p2
