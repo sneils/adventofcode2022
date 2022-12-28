@@ -80,7 +80,7 @@ def parse(line):
 #    print()
 
 
-def run(data):
+def run(data, args):
     ropes = (Rope(2), Rope(10))
 
     for line in data:

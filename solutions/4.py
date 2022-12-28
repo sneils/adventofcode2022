@@ -3,7 +3,7 @@ def parse_elf(s):
     return [*range(int(a), int(b) + 1)]
 
 
-def run(data):
+def run(data, args):
     part1, part2 = 0, 0
 
     for line in data:

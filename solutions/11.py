@@ -91,7 +91,7 @@ def parse_troop(data):
     return troop
 
 
-def run(data):
+def run(data, args):
     troop1 = parse_troop(data)
     troop1.play(20)
 

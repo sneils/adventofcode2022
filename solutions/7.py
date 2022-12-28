@@ -1,7 +1,7 @@
 from pprint import pprint
 
 
-def run(data):
+def run(data, args):
     fs = {"/": 0}
     wd = []
 

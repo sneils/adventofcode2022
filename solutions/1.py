@@ -1,4 +1,4 @@
-def run(data):
+def run(data, args):
     elves = []
     cur = 0
     for line in data:

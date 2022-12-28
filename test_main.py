@@ -15,10 +15,11 @@ SAMPLES = [
     (12, 31, 29),
     (13, 13, 140),
     (14, 24, 93),
+    # day 15 is special
 ]
 
 
-@pytest.mark.parametrize('day,part1,part2', SAMPLES)
+@pytest.mark.parametrize("day,part1,part2", SAMPLES)
 def test_samples(day, part1, part2):
     assert (part1, part2) == run_sample(day)
 
@@ -32,7 +33,7 @@ SAMPLES_6 = [
 ]
 
 
-@pytest.mark.parametrize('input,part1,part2', SAMPLES_6)
+@pytest.mark.parametrize("input,part1,part2", SAMPLES_6)
 def test_6(input, part1, part2):
     assert (part1, part2) == run(6, [input])
 
@@ -63,3 +64,7 @@ def test_10_complex(capsys):
     output = "\n".join(output)
     assert (13140, 0) == run_sample(10)
     assert output == capsys.readouterr().out
+
+
+def test_15():
+    assert (26, 56000011) == run_sample(15, {"use_sample": True})

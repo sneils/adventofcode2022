@@ -6,5 +6,5 @@ def find_marker(stream, n):
     raise LookupError
 
 
-def run(data):
+def run(data, args):
     return find_marker(data[0], 4), find_marker(data[0], 14)

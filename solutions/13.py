@@ -4,9 +4,7 @@ from functools import cmp_to_key
 
 def compare(a, b):
     def _list(x):
-        if isinstance(x, list):
-            return x
-        return [x]
+        return x if isinstance(x, list) else [x]
 
     if type(a) != type(b):
         return compare(_list(a), _list(b))
@@ -25,21 +23,16 @@ def compare(a, b):
     return len(b) >= len(a)
 
 
-def run(data):
+def run(data, args):
     data = [json_loads(row) for row in data if row != ""]
 
     p1 = sum(
         i // 2 + 1 for i in range(0, len(data), 2) if compare(data[i], data[i + 1])
     )
 
-    def _cmp(a, b):
-        if compare(a, b):
-            return -1
-        return 1
-
     _2, _6 = [[2]], [[6]]
     data += [_2, _6]
-    data.sort(key=cmp_to_key(_cmp))
+    data.sort(key=cmp_to_key(lambda a, b: -1 if compare(a, b) else 1))
     for i in range(len(data)):
         if data[i] == _2:
             p2 = i + 1

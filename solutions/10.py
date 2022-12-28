@@ -39,7 +39,7 @@ class CPU:
         return sum(self.xs)
 
 
-def run(data):
+def run(data, args):
     cpu = CPU()
     cpu.run(data)
     return cpu.learned(), 0

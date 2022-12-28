@@ -30,7 +30,7 @@ class StackMover:
         return "".join(x[-1] for x in self.stacks if len(x) > 0)
 
 
-def run(data):
+def run(data, args):
     stacks = (StackMover(9000), StackMover(9001))
 
     for line in reversed(data):

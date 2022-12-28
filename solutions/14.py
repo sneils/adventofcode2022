@@ -103,7 +103,7 @@ class Cave:
         print("=" * w)
 
 
-def run(data):
+def run(data, args):
     def _point(input):
         x, y = input.split(",")
         return (int(x), int(y))

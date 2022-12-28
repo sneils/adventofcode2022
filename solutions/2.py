@@ -1,4 +1,4 @@
-def run(data):
+def run(data, args):
     part1, part2 = 0, 0
     for line in data:
         a, b = line.split()

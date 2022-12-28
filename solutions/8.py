@@ -48,7 +48,7 @@ def get_score(x, y, data):
     )
 
 
-def run(data):
+def run(data, args):
     p1 = 2 * (len(data) + len(data[0])) - 4
     p2 = 0
 

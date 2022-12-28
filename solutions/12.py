@@ -33,7 +33,7 @@ def find_route(data, pos, goal):
         moves += [(n, steps + 1) for n in get_neighbors(data, check)]
 
 
-def run(data):
+def run(data, args):
     todo_p2 = []
 
     for y in range(len(data)):

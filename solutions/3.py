@@ -7,7 +7,7 @@ def chunk(it, size):
     return iter(lambda: tuple(islice(it, size)), ())
 
 
-def run(data):
+def run(data, args):
     rucksacks = []
     for line in data:
         l = len(line) // 2
